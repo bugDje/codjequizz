@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz?</title>
+    <link rel="icon" href="./image/quizz.ico" type="Icon Quizz" />
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="script.js"></script>
+    <script defer src="questions.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <h3 class="text">QuiZz coDje</h3>
+      <div class="start-quizz">
+        <button>Commencer le QuiZz</button>
+      </div>
+      <div class="box-quizz">
+        <div class="titre-quizz">
+          <span>Voici les règles du QuiZz</span>
+        </div>
+        <div class="liste-quizz">
+          <div class="info-quizz">
+            1. Tu as seulement <span>15 secondes</span> pour chaque question.
+          </div>
+          <div class="info-quizz">
+            2. Une fois le temps écoulé, tu ne pourras plus répondre.
+          </div>
+          <div class="info-quizz">
+            3. Chaque réponse sélectionnée, ne sera plus selectionnable.
+          </div>
+          <div class="info-quizz">
+            4. Tu ne pourras plus partir de ce quizz une fois qu'il aura
+            commencé.
+          </div>
+          <div class="info-quizz">
+            5. Plus il y aura de bonnes réponses et plus tu gagneras de point.
+          </div>
+          <div class="info-quizz">6. Bonne Chance.</div>
+        </div>
+        <div class="buttons-quizz">
+          <button class="quit-quizz">Quitter</button>
+          <button class="restart-quizz">Continuer</button>
+        </div>
+      </div>
+      <div class="quizz">
+        <header>
+          <div class="quizz-title">Super QuiZz</div>
+          <div class="quizz-time">
+            <div class="time_text">Temps Restant</div>
+            <div class="time_sec">15</div>
+          </div>
+          <div class="time_line"></div>
+        </header>
+        <section>
+          <div class="que_text"></div>
+          <div class="option_list"></div>
+          <footer>
+            <div class="total_que">
+              <span>
+                Questions
+                <p>2</p>
+                sur
+                <p>5</p>
+              </span>
+            </div>
+            <button class="next_btn">Question Suivante</button>
+          </footer>
+        </section>
+      </div>
+      <div class="result_quizz">
+        <img src="image/medals.svg" alt="icon medaille" class="icon-quizz" />
+        <div class="completed_text">Félicitation, tu as Fini le quiZz !</div>
+        <div class="score_text"></div>
+        <div class="buttons-quizz">
+          <button class="restart-quizz">Recommencer</button>
+          <button class="quit-quizz">Quitter</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
