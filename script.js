@@ -3,7 +3,6 @@ const info_box = document.querySelector(".box-quizz");
 const exit_btn = info_box.querySelector(".buttons-quizz .quit-quizz");
 const continue_btn = info_box.querySelector(".buttons-quizz .restart-quizz");
 const quiz_box = document.querySelector(".quizz");
-console.log(quiz_box);
 const option_list = document.querySelector(".option_list");
 const timeCount = quiz_box.querySelector(".quizz-time .time_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
@@ -120,7 +119,7 @@ quit_quiz.onclick = () => {
   window.location.reload();
 };
 next_btn.onclick = () => {
-  if (que_count < questions.length - 1) {
+  if (que_count < quesRand.length - 1) {
     que_count++;
     que_numb++;
     showQuestions(que_count);
@@ -135,7 +134,6 @@ next_btn.onclick = () => {
   } else {
     clearInterval(counter);
     clearInterval(counterLine);
-    console.log("Question completed");
     showResultBox();
   }
 };
@@ -143,22 +141,22 @@ function showQuestions(index) {
   const que_text = document.querySelector(".que_text");
   let que_tag =
     "<span>" +
-    questions[index].numb +
+    quesRand[index].numb +
     ". " +
-    questions[index].question +
+    quesRand[index].question +
     "</span>";
   let option_tag =
     '<div class="option"><span>' +
-    questions[index].options[0] +
+    quesRand[index].options[0] +
     "</span></div>" +
     '<div class="option"><span>' +
-    questions[index].options[1] +
+    quesRand[index].options[1] +
     "</span></div>" +
     '<div class="option"><span>' +
-    questions[index].options[2] +
+    quesRand[index].options[2] +
     "</span></div>" +
     '<div class="option"><span>' +
-    questions[index].options[3] +
+    quesRand[index].options[3] +
     "</span></div>";
   que_text.innerHTML = que_tag;
   option_list.innerHTML = option_tag;
@@ -174,12 +172,11 @@ function optionSelected(answer) {
   clearInterval(counter);
   clearInterval(counterLine);
   let userAns = answer.textContent;
-  let correctAns = questions[que_count].answer;
+  let correctAns = quesRand[que_count].answer;
   let allOptions = option_list.children.length;
 
   if (userAns == correctAns) {
     userScore += 1;
-    console.log(userScore);
     answer.classList.add("correct");
     answer.insertAdjacentHTML("beforeend", iCorrect);
     correctRing();
@@ -207,27 +204,27 @@ function showResultBox() {
   const scoreText = result_box.querySelector(".score_text");
   if (userScore == 5) {
     fortRing();
-    let scoreTag = `<span>Et WAaaOouuH!! tu as eu<p>${userScore}</p>bonnes réponses sur<p>${questions.length}</p>questions ! INCROYABLE !!!!</span>`;
+    let scoreTag = `<span>Et WAaaOouuH!! tu as eu<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions ! INCROYABLE !!!!</span>`;
     scoreText.innerHTML = scoreTag;
   } else if (userScore >= 3) {
     vaincRing();
-    let scoreTag = `<span>Et Bravo! tu as fait<p>${userScore}</p>bonnes réponses sur<p>${questions.length}</p>questions.</span>`;
+    let scoreTag = `<span>Et Bravo! tu as fait<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions.</span>`;
     scoreText.innerHTML = scoreTag;
   } else if (userScore >= 1) {
     moyRing();
     let scoreTag = `<span>Malheureusement, tu as seulement 
-            <p>${userScore}</p>bonnes réponses sur<p>${questions.length}</p>questions.
+            <p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions.
           </span>`;
     scoreText.innerHTML = scoreTag;
   } else {
     perdRing();
-    let scoreTag = `<span>Oh Non! par contre tu as<p>${userScore}</p>bonne réponse sur<p>${questions.length}</p>questions.</span>`;
+    let scoreTag = `<span>Oh Non! par contre tu as<p>${userScore}</p>bonne réponse sur<p>${quesRand.length}</p>questions.</span>`;
     scoreText.innerHTML = scoreTag;
   }
 }
 function queCounter(index) {
   const bottom_ques_counter = quiz_box.querySelector(".total_que");
-  let totalQuesCountTag = `<span>Questions<p>${index}</p>sur<p>${questions.length}</p></span>`;
+  let totalQuesCountTag = `<span>Questions<p>${index}</p>sur<p>${quesRand.length}</p></span>`;
   bottom_ques_counter.innerHTML = totalQuesCountTag;
 }
 function startTimer(time) {
@@ -245,7 +242,7 @@ function startTimer(time) {
       clearInterval(counter);
       timeCount.textContent = "00";
       timeOff.textContent = "Temps Écoulé";
-      let correctAns = questions[que_count].answer;
+      let correctAns = quesRand[que_count].answer;
       let allOptions = option_list.children.length;
       for (let i = 0; i < allOptions; i++) {
         if (option_list.children[i].textContent == correctAns) {
@@ -269,4 +266,12 @@ function startTimerLine(time) {
       clearInterval(counterLine);
     }
   }
+};
+
+function RandArray(array) {
+  let rand = Math.random() * array.length | 0;
+  let quesRand = array[rand];
+  return quesRand;
 }
+
+
