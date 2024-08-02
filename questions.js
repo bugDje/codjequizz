@@ -75,24 +75,92 @@ let histoires = [
     options: ["Jean-Paul Gaultier", "Louis Vuitton", "Hugo Boss", "Le ministère Allemand"],
   },
 ];
+// -----Film-----
+let films = [
+  {
+    numb: 1,
+    question: `Quel est le prénom du Profeseur Rogue ?`,
+    answer: "Severus",
+    options: ["Sirius", "Rubeus", "Quirinus", "Severus"],
+  },
+  {
+    numb: 2,
+    question: `Comment s'appelle le fantôme de la maison PoufSouffle ?`,
+    answer: "Le moine gras",
+    options: ["Le pasteur Rob", "Le fou du roi", "Le moine gras", "Le prêtre du Château"],
+  },
+  {
+    numb: 3,
+    question: `Dans Harry Potter à l'école des sorciers, Qui est le professeur contre les forces du mal ?`,
+    answer: "Le professeur Quirrell",
+    options: [
+      "Le professeur Rogue",
+      "Le professeur Maugrey",
+      "Le professeur Quirrell",
+      "Le professeur Têtenjoy",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Dans quel pub de pre-au-lard a lieu la première réunion de l'armée de Dumbledore ?`,
+    answer: "A la tête de sanglier",
+    options: ["Aux trois balais", "Au V&B", "A la tête de sanglier", "Au chaudron baveur"],
+  },
+  {
+    numb: 5,
+    question: `Combien y a t-il de balles au jeu de Quidditch ?`,
+    answer: "4",
+    options: ["2", "3", "4", "5"],
+  },
+];
 
 let themeQuestion = document.querySelectorAll(".theme");
-for (let tout = 0; tout < themeQuestion.length; tout++) {
-  themeQuestion[tout].innerText = " Cheval";  
-}
-let mesQuestions = [histoires,questions] ; // pensez à mettre les themes (nom de variable) ici
-let quesRand = RandArray(mesQuestions);
-console.log(quesRand);
 
+let mesQuestions = [histoires,questions,films] ; // pensez à mettre les themes (nom array) ici
+let quesRand = RandArray(mesQuestions);
+
+// -------------Text des Thèmes-------------------
 if(quesRand === histoires){
   for (let tout = 0; tout < themeQuestion.length; tout++) {
     themeQuestion[tout].innerText = " Histoire ";  //rajouter pour chaque nouveau theme
+  }
+}else if(quesRand === films){
+  for (let tout = 0; tout < themeQuestion.length; tout++) {
+    themeQuestion[tout].innerText = " Film ";  
   }
 } else{
   for (let tout = 0; tout < themeQuestion.length; tout++) {
     themeQuestion[tout].innerText = " Serie Tv ";  
   }
-}
+};
+
+// ----------Choix des thèmes ---------------
+let btnHistoire = document.querySelector(".t-histoire");
+let btnSerie = document.querySelector(".t-serie");
+let btnFilm = document.querySelector(".t-film");
+
+btnHistoire.addEventListener("click", ()=>{
+    quesRand = mesQuestions[0];
+    info_box.classList.add("activeInfo");
+    clicRing();  
+}      
+  );
+btnSerie.addEventListener("click", ()=>{
+    quesRand = mesQuestions[1];
+    info_box.classList.add("activeInfo");
+    clicRing();  
+}      
+  );
+btnFilm.addEventListener("click", ()=>{
+    quesRand = mesQuestions[2];
+    info_box.classList.add("activeInfo");
+    clicRing();  
+}      
+  );
+
+
+
+
 
 
 
