@@ -157,15 +157,18 @@ let btnFilm = document.querySelector(".t-film");
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
   info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
   clicRing();
 });
 btnSerie.addEventListener("click", () => {
   quesRand = mesQuestions[1];
   info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
   clicRing();
 });
 btnFilm.addEventListener("click", () => {
   quesRand = mesQuestions[2];
   info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
   clicRing();
 });

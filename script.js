@@ -66,11 +66,13 @@ const restartRing = () => {
 
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
   clicRing();
 };
 
 exit_btn.onclick = () => {
   info_box.classList.remove("activeInfo");
+  clearWrapTheme.style.display = "flex";
   clicRing();
 };
 
@@ -269,6 +271,7 @@ function startTimerLine(time) {
 }
 let buttonAlltheme = document.querySelector(".all-theme");
 let wrapTheme = document.querySelector(".wrap-theme ul");
+let clearWrapTheme = document.querySelector(".wrap-theme");
 
 buttonAlltheme.addEventListener("click", () => {
   wrapTheme.style.display = "flex";
