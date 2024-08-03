@@ -169,7 +169,7 @@ button.all-theme:active {
   text-align: left;
   display: block;
   font-size: 0.9em;
-  line-height: 35px;
+  line-height: 30px;
 }
 .box-quizz .liste-quizz span {
   color: red;
@@ -458,6 +458,11 @@ footer .next_btn:hover {
   text-align: center;
 }
 
+@media (min-width:290px)  { 
+  .box{
+    background-color: rgb(125, 125, 125);
+  }
+}
 @media (min-width:320px)  { 
   .box{
     background-color: blue;
