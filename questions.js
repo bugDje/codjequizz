@@ -137,15 +137,15 @@ let quesRand = RandArray(mesQuestions);
 // -------------Text des Thèmes-------------------
 if (quesRand === histoires) {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Histoire "; //rajouter pour chaque nouveau theme
+    themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
   }
 } else if (quesRand === films) {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Film ";
+    themeQuestion[tout].innerText = ` "Film" `;
   }
 } else {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Serie Tv ";
+    themeQuestion[tout].innerText = ` "Serie Tv" `;
   }
 }
 
