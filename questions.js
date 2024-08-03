@@ -55,31 +55,36 @@ let histoires = [
     numb: 3,
     question: `Quel animal ou objet, à pu prendre des photos pour espionner l'ennemi durants la seconde guerre mondiale ?`,
     answer: "un Pigeon",
-    options: [
-      "un Pigeon",
-      "un Corbeau",
-      "un Drone",
-      "un Smartphone",
-    ],
+    options: ["un Pigeon", "un Corbeau", "un Drone", "un Smartphone"],
   },
   {
     numb: 4,
     question: `Quel est le nom de l'Opération durant le débarquement de Normandie le 6 juin 1944 ?`,
     answer: "Opération Overlord",
-    options: ["Opération coup de poing", "Opération Cobra", "Opération Overlord", "Opération Barbarossa"],
+    options: [
+      "Opération coup de poing",
+      "Opération Cobra",
+      "Opération Overlord",
+      "Opération Barbarossa",
+    ],
   },
   {
     numb: 5,
     question: `Qui a conçu les uniformes des soldats Allemands lors de la Seconde Guerre Mondiale ?`,
     answer: "Hugo Boss",
-    options: ["Jean-Paul Gaultier", "Louis Vuitton", "Hugo Boss", "Le ministère Allemand"],
+    options: [
+      "Jean-Paul Gaultier",
+      "Louis Vuitton",
+      "Hugo Boss",
+      "Le ministère Allemand",
+    ],
   },
 ];
 // -----Film-----
 let films = [
   {
     numb: 1,
-    question: `Quel est le prénom du Profeseur Rogue ?`,
+    question: `Quel est le prénom du Professeur Rogue ?`,
     answer: "Severus",
     options: ["Sirius", "Rubeus", "Quirinus", "Severus"],
   },
@@ -87,7 +92,12 @@ let films = [
     numb: 2,
     question: `Comment s'appelle le fantôme de la maison PoufSouffle ?`,
     answer: "Le moine gras",
-    options: ["Le pasteur Rob", "Le fou du roi", "Le moine gras", "Le prêtre du Château"],
+    options: [
+      "Le pasteur Rob",
+      "Le fou du roi",
+      "Le moine gras",
+      "Le prêtre du Château",
+    ],
   },
   {
     numb: 3,
@@ -104,7 +114,12 @@ let films = [
     numb: 4,
     question: `Dans quel pub de pre-au-lard a lieu la première réunion de l'armée de Dumbledore ?`,
     answer: "A la tête de sanglier",
-    options: ["Aux trois balais", "Au V&B", "A la tête de sanglier", "Au chaudron baveur"],
+    options: [
+      "Aux trois balais",
+      "Au V&B",
+      "A la tête de sanglier",
+      "Au chaudron baveur",
+    ],
   },
   {
     numb: 5,
@@ -116,52 +131,41 @@ let films = [
 
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires,questions,films] ; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histoires, questions, films]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
-if(quesRand === histoires){
+if (quesRand === histoires) {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Histoire ";  //rajouter pour chaque nouveau theme
+    themeQuestion[tout].innerText = " Histoire "; //rajouter pour chaque nouveau theme
   }
-}else if(quesRand === films){
+} else if (quesRand === films) {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Film ";  
+    themeQuestion[tout].innerText = " Film ";
   }
-} else{
+} else {
   for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = " Serie Tv ";  
+    themeQuestion[tout].innerText = " Serie Tv ";
   }
-};
+}
 
 // ----------Choix des thèmes ---------------
 let btnHistoire = document.querySelector(".t-histoire");
 let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
 
-btnHistoire.addEventListener("click", ()=>{
-    quesRand = mesQuestions[0];
-    info_box.classList.add("activeInfo");
-    clicRing();  
-}      
-  );
-btnSerie.addEventListener("click", ()=>{
-    quesRand = mesQuestions[1];
-    info_box.classList.add("activeInfo");
-    clicRing();  
-}      
-  );
-btnFilm.addEventListener("click", ()=>{
-    quesRand = mesQuestions[2];
-    info_box.classList.add("activeInfo");
-    clicRing();  
-}      
-  );
-
-
-
-
-
-
-
-
+btnHistoire.addEventListener("click", () => {
+  quesRand = mesQuestions[0];
+  info_box.classList.add("activeInfo");
+  clicRing();
+});
+btnSerie.addEventListener("click", () => {
+  quesRand = mesQuestions[1];
+  info_box.classList.add("activeInfo");
+  clicRing();
+});
+btnFilm.addEventListener("click", () => {
+  quesRand = mesQuestions[2];
+  info_box.classList.add("activeInfo");
+  clicRing();
+});
