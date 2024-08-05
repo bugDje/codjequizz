@@ -135,19 +135,22 @@ let mesQuestions = [histoires, questions, films]; // pensez à mettre les themes
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
-if (quesRand === histoires) {
-  for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
-  }
-} else if (quesRand === films) {
-  for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = ` "Film" `;
-  }
-} else {
-  for (let tout = 0; tout < themeQuestion.length; tout++) {
-    themeQuestion[tout].innerText = ` "Serie Tv" `;
+function textTheme(){
+  if (quesRand === histoires) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
+    }
+  } else if (quesRand === films) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Film" `;
+    }
+  } else {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Serie Tv" `;
+    }
   }
 }
+textTheme();
 
 // ----------Choix des thèmes avec bouton ---------------
 let btnHistoire = document.querySelector(".t-histoire");
@@ -159,16 +162,19 @@ btnHistoire.addEventListener("click", () => {
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();
+  textTheme();
 });
 btnSerie.addEventListener("click", () => {
   quesRand = mesQuestions[1];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();
+  textTheme();
 });
 btnFilm.addEventListener("click", () => {
   quesRand = mesQuestions[2];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();
+  textTheme();
 });

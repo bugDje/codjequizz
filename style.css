@@ -469,6 +469,7 @@ footer .next_btn:hover {
     margin-top: 30px;
   }
   .box-quizz .liste-quizz {
+    margin-left: 15px;
     padding: 10px;
     font-size: 0.9em;
     line-height: 22px;

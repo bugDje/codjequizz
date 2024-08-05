@@ -10,89 +10,89 @@
     <script defer src="questions.js"></script>
   </head>
   <body>
-      <div class="dje-wrap">
-        <div class="box">
-          <h3 class="text">QuiZz coDje</h3>          
-          <div class="wrap-theme">
-            <h4 class="titre-question">
-              Thème du jour<cite><span class="theme"></span></cite>
-            </h4>
-            <div class="start-quizz">
-              <button>Commencer le QuiZz</button>
-            </div>
-            <button class="all-theme">Autres<br />Thèmes</button>
-            <ul>
-              <li class="t-histoire">Histoire</li>
-              <li class="t-serie">Serie Tv</li>
-              <li class="t-film">Film</li>
-            </ul>
+    <div class="dje-wrap">
+      <div class="box">
+        <h3 class="text">QuiZz coDje</h3>
+        <div class="wrap-theme">
+          <h4 class="titre-question">
+            Thème du jour<cite><span class="theme"></span></cite>
+          </h4>
+          <div class="start-quizz">
+            <button>Commencer le QuiZz</button>
           </div>
-          <div class="box-quizz">
-            <div class="titre-quizz">
-              <span>Voici les règles du QuiZz</span>
-            </div>
-            <div class="liste-quizz">
-              <div class="info-quizz">
-                1. Tu as seulement <span>15 secondes</span> pour chaque question.
-              </div>
-              <div class="info-quizz">
-                2. Une fois le temps écoulé, tu ne pourras plus répondre.
-              </div>
-              <div class="info-quizz">
-                3. Chaque réponse sélectionnée, ne sera plus selectionnable.
-              </div>
-              <div class="info-quizz">
-                4. Tu ne pourras plus partir de ce quizz une fois qu'il aura
-                commencé.
-              </div>
-              <div class="info-quizz">
-                5. Plus il y aura de bonnes réponses et plus tu gagneras de point.
-              </div>
-              <div class="info-quizz">6. Bonne Chance.</div>
-            </div>
-            <div class="buttons-quizz">
-              <button class="quit-quizz">Quitter</button>
-              <button class="restart-quizz">Continuer</button>
-            </div>
+          <button class="all-theme">Autres<br />Thèmes</button>
+          <ul>
+            <li class="t-histoire">Histoire</li>
+            <li class="t-serie">Serie Tv</li>
+            <li class="t-film">Film</li>
+          </ul>
+        </div>
+        <div class="box-quizz">
+          <div class="titre-quizz">
+            <span>Voici les règles du QuiZz</span>
           </div>
-          <div class="quizz">
-            <header>
-              <div class="quizz-title">Thème:<span class="theme"></span></div>
-              <div class="quizz-time">
-                <div class="time_text">Temps Restant</div>
-                <div class="time_sec">15</div>
-              </div>
-              <div class="time_line"></div>
-            </header>
-            <section>
-              <div class="que_text"></div>
-              <div class="option_list"></div>
-              <footer>
-                <div class="total_que">
-                  <span>
-                    Questions
-                    <p>2</p>
-                    sur
-                    <p>5</p>
-                  </span>
-                </div>
-                <button class="next_btn">Question Suivante</button>
-              </footer>
-            </section>
+          <ol class="liste-quizz">
+            <li class="info-quizz">
+              Tu as seulement <span>15 secondes</span> pour chaque question.
+            </li>
+            <li class="info-quizz">
+              Une fois le temps écoulé, tu ne pourras plus répondre.
+            </li>
+            <li class="info-quizz">
+              Chaque réponse sélectionnée, ne sera plus selectionnable.
+            </li>
+            <li class="info-quizz">
+              Tu ne pourras plus partir de ce quizz une fois qu'il aura
+              commencé.
+            </li>
+            <li class="info-quizz">
+              Plus il y aura de bonnes réponses et plus tu gagneras de point.
+            </li>
+            <li class="info-quizz">Bonne Chance.</li>
+          </ol>
+          <div class="buttons-quizz">
+            <button class="quit-quizz">Quitter</button>
+            <button class="restart-quizz">Continuer</button>
           </div>
-          <div class="result_quizz">
-            <img src="image/medals.svg" alt="icon medaille" class="icon-quizz" />
-            <div class="completed_text">Félicitation, tu as Fini le quiZz !</div>
-            <div class="score_text"></div>
-            <div class="buttons-quizz">
-              <button class="restart-quizz">Recommencer</button>
-              <button class="quit-quizz">Quitter</button>
+        </div>
+        <div class="quizz">
+          <header>
+            <div class="quizz-title">Thème:<span class="theme"></span></div>
+            <div class="quizz-time">
+              <div class="time_text">Temps Restant</div>
+              <div class="time_sec">15</div>
             </div>
+            <div class="time_line"></div>
+          </header>
+          <section>
+            <div class="que_text"></div>
+            <div class="option_list"></div>
+            <footer>
+              <div class="total_que">
+                <span>
+                  Questions
+                  <p>2</p>
+                  sur
+                  <p>5</p>
+                </span>
+              </div>
+              <button class="next_btn">Question Suivante</button>
+            </footer>
+          </section>
+        </div>
+        <div class="result_quizz">
+          <img src="image/medals.svg" alt="icon medaille" class="icon-quizz" />
+          <div class="completed_text">Félicitation, tu as Fini le quiZz !</div>
+          <div class="score_text"></div>
+          <div class="buttons-quizz">
+            <button class="restart-quizz">Recommencer</button>
+            <button class="quit-quizz">Quitter</button>
           </div>
         </div>
       </div>
-      <div class="dje-footer">
-        <p>&copy; coDje <span>•</span> 2024 - tous droits réservés</p>
-      </div>
+    </div>
+    <div class="dje-footer">
+      <p>&copy; coDje <span>•</span> 2024 - tous droits réservés</p>
+    </div>
   </body>
 </html>
