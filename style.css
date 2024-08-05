@@ -304,10 +304,10 @@ section .option_list .option {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-section .option_list .option:hover {
+/* section .option_list .option:hover {
   background: rgb(182, 181, 181);
   border: 1px solid rgb(102, 101, 101);
-}
+} */
 .option_list .option:last-child {
   margin-bottom: 0;
 }
@@ -341,7 +341,6 @@ section .option_list .option:hover {
 footer .total_que span p {
   font-weight: 500;
   padding: 0 4px;
-  margin-left: 5px;
 }
 .total_que span p:first-child {
   padding-left: 0px;
@@ -458,10 +457,13 @@ footer .next_btn:hover {
   font-size: 12px;
   text-align: center;
 }
+.dje-footer span {
+  font-weight: 800;
+}
 
 @media (min-width: 290px) {
   .box {
-    background-color: rgb(125, 125, 125);
+    height: 480px;
   }
   .titre-question {
     margin-top: 30px;
@@ -469,42 +471,79 @@ footer .next_btn:hover {
   .box-quizz .liste-quizz {
     padding: 10px;
     font-size: 0.9em;
-    line-height: 25px;
+    line-height: 22px;
+  }
+  .box-quizz .titre-quizz {
+    font-size: 19px;
+    padding-left: 5px;
   }
   section .option_list .option {
     font-size: 16px;
-    height: 40px
-}
+    height: 40px;
+  }
+  .quizz section .option_list {
+    padding: 10px 0px;
+  }
+  .que-text {
+    font-size: 15px;
+  }
+  .total_que span p:first-child {
+    padding-left: 5px;
+  }
+  footer .next_btn {
+    margin-left: 5px;
+  }
+  header .quizz-time {
+    padding: 0px 5px;
+  }
+  .dje-footer span {
+    color: grey;
+  }
 }
 @media (min-width: 320px) {
-  .box {
-    background-color: lightgreen;
+  section .option_list .option {
+    font-size: 16px;
+    height: 45px;
+  }
+  .quizz section .que_text {
+    font-size: 16px;
+  }
+  .text {
+    margin-top: 30px
+  }
+  .dje-footer span {
+    color: #fa1;
   }
 }
 @media (min-width: 481px) {
-  .box {
-    background-color: lightcoral;
+  .dje-footer span {
+    color: lightcoral;
   }
 }
 @media (min-width: 641px) {
   .box {
     width: 600px;
     height: 480px;
-    background-color: rgb(225, 255, 0);
   }
   section .option_list .option {
     font-size: 17px;
     height: 50px;
+  }
+  .dje-footer span {
+    color: lightgreen;
+  }
+  .box-quizz .liste-quizz {
+    line-height: 30px
 }
 }
 @media (min-width: 961px) {
-  .box {
-    background-color: rgb(255, 0, 247);
+  .dje-footer span {
+    color: #fa1;
   }
 }
 
 @media (min-width: 1025px) {
-  .box {
-    background-color: rgb(64, 255, 0);
+  .dje-footer span {
+    color: forestgreen;
   }
 }

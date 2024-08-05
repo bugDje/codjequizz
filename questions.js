@@ -149,7 +149,7 @@ if (quesRand === histoires) {
   }
 }
 
-// ----------Choix des thèmes ---------------
+// ----------Choix des thèmes avec bouton ---------------
 let btnHistoire = document.querySelector(".t-histoire");
 let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
