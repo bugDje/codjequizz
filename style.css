@@ -453,6 +453,8 @@ footer .next_btn:hover {
   height: 20px;
 }
 .dje-footer {
+  display: flex;
+  justify-content: space-around;
   color: #000000ba;
   font-size: 12px;
   text-align: center;

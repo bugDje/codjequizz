@@ -129,9 +129,59 @@ let films = [
   },
 ];
 
+//--------sport--------
+
+let sport = [
+  {
+    numb: 1,
+    question: `Quelle fut la toute première rencontre internationale de l'histoire du rugby à XV ?`,
+    answer: "Angleterre - Ecosse",
+    options: ["Angleterre - Australie", "Angleterre - Irlande", "Angleterre - Pays de Galles", "Angleterre - Ecosse"],
+  },
+  {
+    numb: 2,
+    question: `En quelle année le rugby est-il devenu un sport professionnel ? ?`,
+    answer: "1995",
+    options: [
+      "1965",
+      "1975",
+      "1985",
+      "1995",
+    ],
+  },
+  {
+    numb: 3,
+    question: `Quel était l’un des surnoms de Sébastien Chabal ?`,
+    answer: "L'anesthésiste",
+    options: [
+      "L'arracheur de dents",
+      "L'anesthésiste",
+      "Le boucher",
+      "Le bucheron",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Laquelle de ces sélections nationales possède un palmier comme emblème ?`,
+    answer: "Les Fidji",
+    options: [
+      "L'Argentine",
+      "Les Tonga",
+      "Les Fidji",
+      "Les iles Samoa",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Laquelle de ces variantes du rugby n’existe pas ?`,
+    answer: "Le Chase Rugby",
+    options: ["Le Beach Rugby", "Le Chase Rugby", "Le Beach Rugby", "Le Touch Rugby"],
+  },
+];
+
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires, questions, films]; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histoires, questions, films, sport]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
@@ -144,6 +194,10 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Film" `;
     }
+  } else if (quesRand === sport) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Sport" `;
+    }
   } else {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
@@ -153,9 +207,10 @@ function textTheme(){
 textTheme();
 
 // ----------Choix des thèmes avec bouton ---------------
-let btnHistoire = document.querySelector(".t-histoire");
+let btnHistoire = document.querySelector(".t-histoire"); // à rajouter si nouveau thème
 let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
+let btnSport = document.querySelector(".t-sport");
 
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
@@ -173,6 +228,13 @@ btnSerie.addEventListener("click", () => {
 });
 btnFilm.addEventListener("click", () => {
   quesRand = mesQuestions[2];
+  info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
+  clicRing();
+  textTheme();
+});
+btnSport.addEventListener("click", () => {
+  quesRand = mesQuestions[3];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();
