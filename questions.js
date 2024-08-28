@@ -140,7 +140,7 @@ let sport = [
   },
   {
     numb: 2,
-    question: `En quelle année le rugby est-il devenu un sport professionnel ? ?`,
+    question: `En quelle année le rugby est-il devenu un sport professionnel ?`,
     answer: "1995",
     options: [
       "1965",
@@ -178,10 +178,59 @@ let sport = [
     options: ["Le Beach Rugby", "Le Chase Rugby", "Le Beach Rugby", "Le Touch Rugby"],
   },
 ];
+//--------Science--------
+
+let science = [
+  {
+    numb: 1,
+    question: `Quel est le plus petit os du corps humain ?`,
+    answer: "L'étrier",
+    options: ["Le vomer", "Le marteau", "L'étrier", "L'enclume"],
+  },
+  {
+    numb: 2,
+    question: `Combien y a-t-il de muscles dans le corps humain ?`,
+    answer: "Environ 600",
+    options: [
+      "Environ 1500",
+      "Environ 1000",
+      "Environ 100",
+      "Environ 600",
+    ],
+  },
+  {
+    numb: 3,
+    question: `Où se situe le triceps ?`,
+    answer: "À l’arrière du bras",
+    options: [
+      "À l’avant du bras",
+      "À l’avant de la cuisse",
+      "Au bas du dos",
+      "À l’arrière du bras",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Combien y a-t-il de phalanges sur le pouce ?`,
+    answer: "2",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Combien l’adulte a-t-il de dents avec les dents de sagesse ?`,
+    answer: "32",
+    options: ["28", "32", "34", "36"],
+  },
+];
 
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires, questions, films, sport]; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histoires, questions, films, sport, science]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
@@ -198,6 +247,10 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Sport" `;
     }
+  } else if (quesRand === science) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Science" `;
+    }
   } else {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
@@ -211,6 +264,7 @@ let btnHistoire = document.querySelector(".t-histoire"); // à rajouter si nouve
 let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
 let btnSport = document.querySelector(".t-sport");
+let btnScience = document.querySelector(".t-science");
 
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
@@ -235,6 +289,13 @@ btnFilm.addEventListener("click", () => {
 });
 btnSport.addEventListener("click", () => {
   quesRand = mesQuestions[3];
+  info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
+  clicRing();
+  textTheme();
+});
+btnScience.addEventListener("click", () => {
+  quesRand = mesQuestions[4];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();

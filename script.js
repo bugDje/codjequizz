@@ -231,10 +231,10 @@ function queCounter(index) {
 }
 function startTimer(time) {
   counter = setInterval(timer, 1000);
-  function timer() {
-    chronoRing();
+  function timer() {   
     timeCount.textContent = time;
     time--;
+    chronoRing();
     if (time < 9) {
       let addZero = timeCount.textContent;
       timeCount.textContent = "0" + addZero;
