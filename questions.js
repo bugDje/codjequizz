@@ -227,10 +227,59 @@ let science = [
     options: ["28", "32", "34", "36"],
   },
 ];
+//--------Langue--------
+
+let langue = [
+  {
+    numb: 1,
+    question: `Comment traduire le mot fraise en anglais ?`,
+    answer: "strawberry",
+    options: ["Raspberry", "Blackberry", "Cherry", "strawberry"],
+  },
+  {
+    numb: 2,
+    question: `Comment écrire en anglais : “Mes cheveux sont blonds.” ?`,
+    answer: "My hair is blond",
+    options: [
+      "My hair is blond",
+      "My hair are blond",
+      "My hair is yellow",
+      "My hair are yellow",
+    ],
+  },
+  {
+    numb: 3,
+    question: `Lequel de ces mots désigne en anglais le mot ouragan ?`,
+    answer: "Hurricane",
+    options: [
+      "Storm",
+      "Rain",
+      "Wind",
+      "Hurricane",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Comment traduire en anglais l’adjectif intelligent ?`,
+    answer: "Smart",
+    options: [
+      "Fool",
+      "Smart",
+      "Kind",
+      "Little",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Comment dit-on le mot mouton en anglais ?`,
+    answer: "Sheep",
+    options: ["Goat", "Sheep", "Horse", "Calf"],
+  },
+];
 
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires, questions, films, sport, science]; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histoires, questions, films, sport, science, langue]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
@@ -251,6 +300,10 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Science" `;
     }
+  } else if (quesRand === langue) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Langue" `;
+    }
   } else {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
@@ -265,6 +318,7 @@ let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
 let btnSport = document.querySelector(".t-sport");
 let btnScience = document.querySelector(".t-science");
+let btnLangue = document.querySelector(".t-langue");
 
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
@@ -296,6 +350,13 @@ btnSport.addEventListener("click", () => {
 });
 btnScience.addEventListener("click", () => {
   quesRand = mesQuestions[4];
+  info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
+  clicRing();
+  textTheme();
+});
+btnLangue.addEventListener("click", () => {
+  quesRand = mesQuestions[5];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();
