@@ -277,9 +277,58 @@ let langue = [
   },
 ];
 
+//------------Crime--------------
+let crime = [
+  {
+    numb: 1,
+    question: `Combien de personne a été tué par le célèbre tueur en serie "jeffrey Dahmer"`,
+    answer: "17",
+    options: ["13", "15", "17", "19"],
+  },
+  {
+    numb: 2,
+    question: `Combien de coups de hache "Candy Montgomery" a t-elle donné lors de sa légitime défense?`,
+    answer: "41",
+    options: [
+      "31",
+      "41",
+      "51",
+      "91",
+    ],
+  },
+  {
+    numb: 3,
+    question: `Qui est le principal suspect dans la fameuse affaire "La tuerie de Nantes"?`,
+    answer: "Xavier Dupont de Ligonnès",
+    options: [
+      "Michel Fourniret",
+      "Emile Louis",
+      "Xavier Dupont de Ligonnès",
+      "Francis Heaulme",
+    ],
+  },
+  {
+    numb: 4,
+    question: `En 1888, dans quel quartier de Londres furent retrouvées assassinées cinq prostituées, victimes de Jack l'Éventreur ?`,
+    answer: "Whitechapel",
+    options: [
+      "Whitechapel",
+      "Trafalgar Square",
+      "Peckham",
+      "Mayfair",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Le "tueur de bergers" aurait assassiné une vingtaine de personnes entre 1894 et 1897. Quel est son nom ?`,
+    answer: "Joseph Vacher",
+    options: ["Roger Poissonnier", "Joseph Vacher", "Fabien Saumonnier", "Arthur Roucher"],
+  },
+];
+
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires, questions, films, sport, science, langue]; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histoires, questions, films, sport, science, langue, crime]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
@@ -304,6 +353,10 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Langue" `;
     }
+  } else if (quesRand === crime) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Crime" `;
+    }
   } else {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
@@ -319,6 +372,7 @@ let btnFilm = document.querySelector(".t-film");
 let btnSport = document.querySelector(".t-sport");
 let btnScience = document.querySelector(".t-science");
 let btnLangue = document.querySelector(".t-langue");
+let btnCrime = document.querySelector(".t-crime");
 
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
@@ -357,6 +411,13 @@ btnScience.addEventListener("click", () => {
 });
 btnLangue.addEventListener("click", () => {
   quesRand = mesQuestions[5];
+  info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
+  clicRing();
+  textTheme();
+});
+btnCrime.addEventListener("click", () => {
+  quesRand = mesQuestions[6];
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
   clicRing();

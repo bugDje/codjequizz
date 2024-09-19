@@ -97,6 +97,7 @@ const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_quizz");
 const restart_quiz = result_box.querySelector(".buttons-quizz .restart-quizz");
 const quit_quiz = result_box.querySelector(".buttons-quizz .quit-quizz");
+
 restart_quiz.onclick = () => {
   quiz_box.classList.add("activeQuiz");
   result_box.classList.remove("activeResult");
