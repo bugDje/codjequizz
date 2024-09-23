@@ -175,7 +175,7 @@ let sport = [
     numb: 5,
     question: `Laquelle de ces variantes du rugby n’existe pas ?`,
     answer: "Le Chase Rugby",
-    options: ["Le Beach Rugby", "Le Chase Rugby", "Le Beach Rugby", "Le Touch Rugby"],
+    options: ["Le Beach Rugby", "Le Chase Rugby", "Rugby Foulard", "Le Touch Rugby"],
   },
 ];
 //--------Science--------
