@@ -38,7 +38,7 @@ let questions = [
 ];
 
 // Histoire
-let histoires = [
+let worldWar2 = [
   {
     numb: 1,
     question: `Quel est le premier pays envahit par l'Allemagne en 1939 ?`,
@@ -77,6 +77,49 @@ let histoires = [
       "Louis Vuitton",
       "Hugo Boss",
       "Le ministère Allemand",
+    ],
+  },
+];
+// -----------------------------------------------------------------------------------------
+let marieCurie = [
+  {
+    numb: 1,
+    question: `Quel premier élément est découvert par le couple Mr et Mme Curie?`,
+    answer: "Polognium",
+    options: ["Radium", "Polognium", "Uranium", "Bérylium"],
+  },
+  {
+    numb: 2,
+    question: `quel est le pays d'origine de la physicienne et chimiste Marie Curie?`,
+    answer: "la Pologne",
+    options: ["la France", "La Suède", "la Pologne", "l'Allemagne"],
+  },
+  {
+    numb: 3,
+    question: `Quel est le prénom de Monsieur Curie? (époux de Marie Curie)`,
+    answer: "Pierre",
+    options: ["Pierre", "Henri", "Lionel", "Loris"],
+  },
+  {
+    numb: 4,
+    question: `Quel élément radioactif peut-on trouver dans les cigarettes?`,
+    answer: "Polognium",
+    options: [
+      "Nobélium",
+      "Copernic",
+      "Nicotine",
+      "Polognium",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Quel est le prénom de la fille ainée de Marie Curie`,
+    answer: "Irène",
+    options: [
+      "Irène",
+      "Louise",
+      "Lola",
+      "Jeanne",
     ],
   },
 ];
@@ -278,7 +321,7 @@ let langue = [
 ];
 
 //------------Crime--------------
-let crime = [
+let crime1 = [
   {
     numb: 1,
     question: `Combien de personne a été tué par le célèbre tueur en serie "jeffrey Dahmer"`,
@@ -326,100 +369,4 @@ let crime = [
   },
 ];
 
-let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histoires, questions, films, sport, science, langue, crime]; // pensez à mettre les themes (nom array) ici
-let quesRand = RandArray(mesQuestions);
-
-// -------------Text des Thèmes-------------------
-function textTheme(){
-  if (quesRand === histoires) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
-    }
-  } else if (quesRand === films) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Film" `;
-    }
-  } else if (quesRand === sport) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Sport" `;
-    }
-  } else if (quesRand === science) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Science" `;
-    }
-  } else if (quesRand === langue) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Langue" `;
-    }
-  } else if (quesRand === crime) {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Crime" `;
-    }
-  } else {
-    for (let tout = 0; tout < themeQuestion.length; tout++) {
-      themeQuestion[tout].innerText = ` "Serie Tv" `;
-    }
-  }
-}
-textTheme();
-
-// ----------Choix des thèmes avec bouton ---------------
-let btnHistoire = document.querySelector(".t-histoire"); // à rajouter si nouveau thème
-let btnSerie = document.querySelector(".t-serie");
-let btnFilm = document.querySelector(".t-film");
-let btnSport = document.querySelector(".t-sport");
-let btnScience = document.querySelector(".t-science");
-let btnLangue = document.querySelector(".t-langue");
-let btnCrime = document.querySelector(".t-crime");
-
-btnHistoire.addEventListener("click", () => {
-  quesRand = mesQuestions[0];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnSerie.addEventListener("click", () => {
-  quesRand = mesQuestions[1];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnFilm.addEventListener("click", () => {
-  quesRand = mesQuestions[2];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnSport.addEventListener("click", () => {
-  quesRand = mesQuestions[3];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnScience.addEventListener("click", () => {
-  quesRand = mesQuestions[4];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnLangue.addEventListener("click", () => {
-  quesRand = mesQuestions[5];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnCrime.addEventListener("click", () => {
-  quesRand = mesQuestions[6];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});

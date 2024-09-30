@@ -270,18 +270,4 @@ function startTimerLine(time) {
     }
   }
 }
-let buttonAlltheme = document.querySelector(".all-theme");
-let wrapTheme = document.querySelector(".wrap-theme ul");
-let clearWrapTheme = document.querySelector(".wrap-theme");
 
-buttonAlltheme.addEventListener("click", () => {
-  wrapTheme.style.display = "flex";
-  buttonAlltheme.classList.remove("all-theme");
-  buttonAlltheme.classList.add("btnThemeOff");
-});
-
-function RandArray(array) {
-  let rand = (Math.random() * array.length) | 0;
-  let quesRand = array[rand];
-  return quesRand;
-}
