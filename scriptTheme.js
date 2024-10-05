@@ -32,7 +32,7 @@ function RandCrime(array) {
 let histoires = [worldWar2, marieCurie] ;
 let histRand = Randhist(histoires);
 
-let crimes = [crime1] ;
+let crimes = [crime1, crime2] ;
 let crimeRand = RandCrime(crimes);
 
 let themeQuestion = document.querySelectorAll(".theme");

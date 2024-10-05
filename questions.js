@@ -324,7 +324,7 @@ let langue = [
 let crime1 = [
   {
     numb: 1,
-    question: `Combien de personne a été tué par le célèbre tueur en serie "jeffrey Dahmer"`,
+    question: `Combien de personne a été tué par le célèbre tueur en serie "jeffrey Dahmer"?`,
     answer: "17",
     options: ["13", "15", "17", "19"],
   },
@@ -366,6 +366,53 @@ let crime1 = [
     question: `Le "tueur de bergers" aurait assassiné une vingtaine de personnes entre 1894 et 1897. Quel est son nom ?`,
     answer: "Joseph Vacher",
     options: ["Roger Poissonnier", "Joseph Vacher", "Fabien Saumonnier", "Arthur Roucher"],
+  },
+];
+let crime2 = [
+  {
+    numb: 1,
+    question: `De qui Marc David Chapman fut-il l'assassin le 8 décembre 1980 ?`,
+    answer: "John Lennon",
+    options: ["Martin Luther King", "John Fitzgerald Kennedy", "John Lennon", "Martin Solveig"],
+  },
+  {
+    numb: 2,
+    question: `Qui Jonathann Daval a t-il accusé publiquement de l'assassinat d'Alexia Daval avant d'avouer en être l'auteur?`,
+    answer: "son beau-frère",
+    options: [
+      "son beau-frère",
+      "sa belle-soeur",
+      "son beau-père",
+      "sa belle-mère",
+    ],
+  },
+  {
+    numb: 3,
+    question: `De combien de meurtre "Emile Louis" est-il reconnu coupable?`,
+    answer: "8",
+    options: [
+      "6",
+      "7",
+      "8",
+      "9",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Quel fut le loisir favori de "Marc Dutroux"?`,
+    answer: "Patinage sur glace",
+    options: [
+      "bobsleigh",
+      "Le ski",
+      "La boxe",
+      "Patinage sur glace",
+    ],
+  },
+  {
+    numb: 5,
+    question: `Qui était surnommé "Le routard du crime"?`,
+    answer: "Francis Heaulme",
+    options: ["Francis Heaulme", "François Vérove ", "Patrick Stars", "Pierre Bodein"],
   },
 ];
 
