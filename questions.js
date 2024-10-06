@@ -320,6 +320,54 @@ let anglais1 = [
   },
 ];
 
+let anglais2 = [
+  {
+    numb: 1,
+    question: `Comment dit-on "tire-bouchon" en anglais ? ?`,
+    answer: "corkscrew",
+    options: ["chisel", "bottle", "tail-pig", "corkscrew"],
+  },
+  {
+    numb: 2,
+    question: `Comment demande-t-on poliment à quelqu'un son nom de famille en anglais ?`,
+    answer: "What’s your surname?",
+    options: [
+      "What’s your Boy?",
+      "What’s your surname?",
+      "What’s your naughty?",
+      "What’s your waist?",
+    ],
+  },
+  {
+    numb: 3,
+    question: `Comment dit-on "fourchette" en anglais ?`,
+    answer: "fork",
+    options: [
+      "knife",
+      "fork",
+      "spoon",
+      "sword",
+    ],
+  },
+  {
+    numb: 4,
+    question: `Comment dit-on "Je n'ai plus faim" en anglais ?`,
+    answer: "I'm not hungry.",
+    options: [
+      "I'm not hungry.",
+      "I'm hungry.",
+      "I'm not thirst.",
+      "I'm thirst.",
+    ],
+  },
+  {
+    numb: 5,
+    question: ` Comment dit-on "vaisselles" en anglais ?`,
+    answer: "dishes",
+    options: ["stove", "dishes", "flat", "saucepan"],
+  },
+];
+
 //------------Crime--------------
 let crime1 = [
   {

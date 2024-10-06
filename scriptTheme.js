@@ -69,7 +69,7 @@ let sportRand = RandCrime(sports);
 let sciences = [science1] ;
 let scienceRand = RandCrime(sciences);
 
-let langues = [anglais1] ;
+let langues = [anglais1, anglais2] ;
 let langueRand = RandCrime(langues);
 
 let series = [serie1] ;

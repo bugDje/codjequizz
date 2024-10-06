@@ -1,1 +1,7 @@
-trouver un moyen de faire un random des sous theme
+Faire un random des questions
+demander un pseudo
+proposer une couleur du site
+possibilité de faire un compte
+
+
+
