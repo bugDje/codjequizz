@@ -27,17 +27,57 @@ function RandCrime(array) {
   let crimeRand = array[rand];
   return crimeRand;
 }
+function RandFilm(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let FilmRand = array[rand];
+  return FilmRand;
+}
+function Randsport(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let sportRand = array[rand];
+  return sportRand;
+}
+function Randscience(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let scienceRand = array[rand];
+  return scienceRand;
+}
+function Randlangue(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let langueRand = array[rand];
+  return langueRand;
+}
+function Randserie(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let serieRand = array[rand];
+  return serieRand;
+}
 
 //pour chaque theme, rajouter une function random ci dessus ainsi que les variables ci-dessous
 let histoires = [worldWar2, marieCurie] ;
-let histRand = Randhist(histoires);
+let histRand = Randhist(histoires); //à rajouter pour chaque sous-catégorie
 
 let crimes = [crime1, crime2] ;
 let crimeRand = RandCrime(crimes);
 
+let  films = [harryPotter] ;
+let filmRand = RandCrime(films);
+
+let sports = [rugby] ;
+let sportRand = RandCrime(sports);
+
+let sciences = [science1] ;
+let scienceRand = RandCrime(sciences);
+
+let langues = [anglais1] ;
+let langueRand = RandCrime(langues);
+
+let series = [serie1] ;
+let serieRand = RandCrime(series);
+
 let themeQuestion = document.querySelectorAll(".theme");
 
-let mesQuestions = [histRand, questions, films, sport, science, langue, crimeRand]; // pensez à mettre les themes (nom array) ici
+let mesQuestions = [histRand, serieRand, filmRand, sportRand, scienceRand, langueRand, crimeRand]; // pensez à mettre les themes (nom array) ici
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
@@ -46,29 +86,33 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
     }
-  } else if (quesRand === films) {
+  } else if (quesRand === filmRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Film" `;
     }
-  } else if (quesRand === sport) {
+  } else if (quesRand === sportRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Sport" `;
     }
-  } else if (quesRand === science) {
+  } else if (quesRand === scienceRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Science" `;
     }
-  } else if (quesRand === langue) {
+  } else if (quesRand === langueRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Langue" `;
     }
-  } else if (quesRand === crimes) {
+  } else if (quesRand === crimeRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Crime" `;
     }
-  } else {
+  } else if (quesRand === serieRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
+    }
+  } else {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Bug" `;
     }
   }
 }

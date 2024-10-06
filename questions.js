@@ -1,5 +1,5 @@
 // Serie Tv
-let questions = [
+let serie1 = [
   {
     numb: 1,
     question: `Dans la serie "<cite>The Big Bang Theory</cite>", Comment s'appelle le meilleur ami de Sheldon ?`,
@@ -124,7 +124,7 @@ let marieCurie = [
   },
 ];
 // -----Film-----
-let films = [
+let harryPotter = [
   {
     numb: 1,
     question: `Quel est le prénom du Professeur Rogue ?`,
@@ -174,7 +174,7 @@ let films = [
 
 //--------sport--------
 
-let sport = [
+let rugby = [
   {
     numb: 1,
     question: `Quelle fut la toute première rencontre internationale de l'histoire du rugby à XV ?`,
@@ -223,7 +223,7 @@ let sport = [
 ];
 //--------Science--------
 
-let science = [
+let science1 = [
   {
     numb: 1,
     question: `Quel est le plus petit os du corps humain ?`,
@@ -272,7 +272,7 @@ let science = [
 ];
 //--------Langue--------
 
-let langue = [
+let anglais1 = [
   {
     numb: 1,
     question: `Comment traduire le mot fraise en anglais ?`,
