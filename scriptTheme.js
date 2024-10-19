@@ -16,7 +16,14 @@ function RandArray(array) {
   return quesRand;
 }
 
+/* Pour rajouter/modifier une thematique, suivre les 7 étape*/
+
+/* Pour rajouter/modifier un theme, suivre étape 2 seulements*/
+
+
 //fonction Random pour chaques thèmes
+
+//------------------------> étape1 <-------------------------
 function Randhist(array) {
   let rand = (Math.random() * array.length) | 0;
   let histRand = array[rand];
@@ -52,18 +59,27 @@ function Randserie(array) {
   let serieRand = array[rand];
   return serieRand;
 }
+function Randgame(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let gameRand = array[rand];
+  return gameRand;
+}
+//étape1
+
 
 //pour chaque theme, rajouter une function random ci dessus ainsi que les variables ci-dessous
+
+//------------------------> étape2 <-------------------------
 let histoires = [worldWar2, marieCurie] ;
 let histRand = Randhist(histoires); //à rajouter pour chaque sous-catégorie
 
 let crimes = [crime1, crime2] ;
 let crimeRand = RandCrime(crimes);
 
-let  films = [harryPotter] ;
+let  films = [harryPotter, film1] ;
 let filmRand = RandCrime(films);
 
-let sports = [rugby] ;
+let sports = [rugby, sport1] ;
 let sportRand = RandCrime(sports);
 
 let sciences = [science1] ;
@@ -72,15 +88,24 @@ let scienceRand = RandCrime(sciences);
 let langues = [anglais1, anglais2] ;
 let langueRand = RandCrime(langues);
 
-let series = [serie1] ;
+let series = [serie1, serie2] ;
 let serieRand = RandCrime(series);
 
-let themeQuestion = document.querySelectorAll(".theme");
+let games = [game1] ;
+let gameRand = RandCrime(games);
+//etape2
 
-let mesQuestions = [histRand, serieRand, filmRand, sportRand, scienceRand, langueRand, crimeRand]; // pensez à mettre les themes (nom array) ici
+//------------------------> étape3 <-------------------------
+let mesQuestions = [histRand, serieRand, filmRand, sportRand, scienceRand, langueRand, crimeRand, gameRand];
+//étape3
+ // pensez à mettre les themes (nom array) ici
+
 let quesRand = RandArray(mesQuestions);
 
 // -------------Text des Thèmes-------------------
+let themeQuestion = document.querySelectorAll(".theme");
+
+//------------------------> étape4 <-------------------------
 function textTheme(){
   if (quesRand === histRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
@@ -110,6 +135,11 @@ function textTheme(){
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Serie Tv" `;
     }
+  } else if (quesRand === gameRand) {
+    for (let tout = 0; tout < themeQuestion.length; tout++) {
+      themeQuestion[tout].innerText = ` "Jeux video" `;
+    }
+    //étape 4
   } else {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Bug" `;
@@ -119,6 +149,8 @@ function textTheme(){
 textTheme();
 
 // ----------Choix des thèmes avec bouton ---------------
+
+//------------------------> étape5 <-------------------------
 let btnHistoire = document.querySelector(".t-histoire"); // à rajouter si nouveau thème
 let btnSerie = document.querySelector(".t-serie");
 let btnFilm = document.querySelector(".t-film");
@@ -126,7 +158,10 @@ let btnSport = document.querySelector(".t-sport");
 let btnScience = document.querySelector(".t-science");
 let btnLangue = document.querySelector(".t-langue");
 let btnCrime = document.querySelector(".t-crime");
+let btnGame = document.querySelector(".t-game");
+//étape5
 
+//------------------------> étape6 <-------------------------
 btnHistoire.addEventListener("click", () => {
   quesRand = mesQuestions[0];
   info_box.classList.add("activeInfo");
@@ -176,3 +211,14 @@ btnCrime.addEventListener("click", () => {
   clicRing();
   textTheme();
 });
+btnGame.addEventListener("click", () => {
+  quesRand = mesQuestions[7];
+  info_box.classList.add("activeInfo");
+  clearWrapTheme.style.display = "none";
+  clicRing();
+  textTheme();
+});
+//étape6
+
+//------------------------> étape7 <-------------------------
+/* rajouter le theme sur la liste de index.html*/

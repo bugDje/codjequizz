@@ -2,6 +2,3 @@ Faire un random des questions
 demander un pseudo
 proposer une couleur du site
 possibilité de faire un compte
-
-
-
