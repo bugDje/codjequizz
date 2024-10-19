@@ -8,6 +8,7 @@ const timeCount = quiz_box.querySelector(".quizz-time .time_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
 const timeOff = quiz_box.querySelector("header .time_text");
 
+//bruitage
 const chronoRing = () => {
   const audio = new Audio();
   audio.src = "./audio/toucheclavier.mp3";
@@ -64,6 +65,7 @@ const restartRing = () => {
   audio.play();
 };
 
+//button menu
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo");
   clearWrapTheme.style.display = "none";
@@ -98,14 +100,19 @@ const result_box = document.querySelector(".result_quizz");
 const restart_quiz = result_box.querySelector(".buttons-quizz .restart-quizz");
 const quit_quiz = result_box.querySelector(".buttons-quizz .quit-quizz");
 
-restart_quiz.onclick = () => {
+restart_quiz.onclick = () => {  
+    // Mélangez les options de chaque question
+    quesRand.forEach(question => {
+        question.options = shuffleArray([...question.options]); //le spread operator [...] pour ne pas modifier l'original
+    });
+    // Fin du mélange    
   quiz_box.classList.add("activeQuiz");
   result_box.classList.remove("activeResult");
   timeValue = 15;
   que_count = 0;
   que_numb = 1;
   userScore = 0;
-  widthValue = 0;
+  widthValue = 0;   
   showQuestions(que_count);
   queCounter(que_numb);
   clearInterval(counter);
@@ -270,4 +277,27 @@ function startTimerLine(time) {
     }
   }
 }
+//Fonction Random pour toutes les thématique
+function RandArray(array) {
+  let rand = (Math.random() * array.length) | 0;
+  let quesRand = array[rand];
+  return quesRand;
+}
+// Fonction pour mélanger un tableau
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Échange
+  }
+  return array;
+}
+// Fonction pour mélanger un tableau
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Échange
+  }
+  return array;
+}
+
 

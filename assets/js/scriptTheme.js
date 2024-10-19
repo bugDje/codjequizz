@@ -9,12 +9,6 @@ buttonAlltheme.addEventListener("click", () => {
   buttonAlltheme.classList.add("btnThemeOff");
 });
 
-//Fonction Random pour toutes les thématique
-function RandArray(array) {
-  let rand = (Math.random() * array.length) | 0;
-  let quesRand = array[rand];
-  return quesRand;
-}
 
 /* Pour rajouter/modifier une thematique, suivre les 7 étape*/
 
@@ -222,3 +216,4 @@ btnGame.addEventListener("click", () => {
 
 //------------------------> étape7 <-------------------------
 /* rajouter le theme sur la liste de index.html*/
+
