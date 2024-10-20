@@ -8,6 +8,21 @@ const timeCount = quiz_box.querySelector(".quizz-time .time_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
 const timeOff = quiz_box.querySelector("header .time_text");
 
+const colorPicker = document.getElementById('colorPicker');
+
+//modifie la couleur du site (via tinicolor script)
+colorPicker.addEventListener('input',()=>{  
+  const selectColor = colorPicker.value;
+
+  //récupère le code couleur hsl dans la bibliotheque de tinicolor
+  const tcColor = tinycolor(selectColor);
+  const hue = tcColor.toHsl().h; // permet d'obtenir la teinte
+
+  //met à jour la propriété css
+  document.documentElement.style.setProperty('--hue', hue);
+
+})
+
 //bruitage
 const chronoRing = () => {
   const audio = new Audio();

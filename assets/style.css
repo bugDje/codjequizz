@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  /*========== Colors ==========*/
+  /*
+  color: bleu = 240
+  color: rouge = 0  
+  color: jaune = 60
+  color: principal = 131
+  */
+  --hue: 131;
+  --first-color: hsl(var(--hue), 50%, 35%);
+  --first-color-hover: hsl(var(--hue), 70%, 35%);
+  --first-color-text: hsl(var(--hue), 100%, 20%, 0.839);
+  --first-color-alt: hsl(var(--hue), 51%, 33%);
+   --first-color-light: hsl(var(--hue), 48%, 94%);
+  --title-color: hsl(230, 9%, 13%);
+  --text-color: hsl(230, 9%, 13%);
+  --text-color-light: hsl(234, 5%, 40%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 99%);
+  --shadow-color: hsla(var(--hue), 90%, 30%, 0.1);
+  --shadow-color-text: hsla(var(--hue), 90%, 30%, 0.1);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +48,11 @@ body {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
+}
+#colorPicker{
+  inset: 0% 0% 0% 50%;
+  transform: translate(-50%, 50%);
+  position: relative;
 }
 .box,
 .quizz,
@@ -60,7 +90,7 @@ button.all-theme {
   font-size: 0.9em;
   padding: 0 5px;
   font-weight: 500;
-  color: forestgreen;
+  color: var(--first-color-text);
   background-color: #fcfcfc;
   box-shadow: 1px 1px 5px black;
   cursor: pointer;
@@ -75,7 +105,7 @@ button.all-theme {
   font-size: 0.9em;
   padding: 0 5px;
   font-weight: 500;
-  color: forestgreen;
+  color: var(--first-color);
   background-color: #fcfcfc;
   box-shadow: inset 1px 1px 5px black;
   cursor: default;
@@ -86,10 +116,10 @@ button.all-theme {
   transition: all 0.3s ease;
 }
 button.all-theme:hover {
-  color: rgb(45, 180, 45);
+  color: var(--first-color-hover);
 }
 button.all-theme:active {
-  color: darkgreen;
+  color: var(--first-color-alt);
   box-shadow: inset 1px 1px 5px black;
 }
 .wrap-theme ul {
@@ -104,7 +134,7 @@ button.all-theme:active {
   font-size: 1em;
   width: 80px;
   text-align: center;
-  background-color: forestgreen;
+  background-color: var(--first-color);
   margin: 4px 10px;
   cursor: pointer;
   padding: 2px 6px;
@@ -114,10 +144,10 @@ button.all-theme:active {
   color: #fcfcfc;
 }
 .wrap-theme ul li:hover {
-  background: rgb(55, 200, 55);
+  background: var(--first-color-hover);
 }
 .wrap-theme ul li:active {
-  background: darkgreen;
+  background: var(--first-color-alt);
   box-shadow: inset 2px 2px 6px black;
 }
 .start-quizz {
@@ -127,7 +157,7 @@ button.all-theme:active {
 }
 .start-quizz button {
   color: #fcfcfc;
-  background: forestgreen;
+  background: var(--first-color);
   border: none;
   font-size: 1.5em;
   padding: 2px 6px;
@@ -138,11 +168,11 @@ button.all-theme:active {
   /* display: none; */
 }
 .start-quizz button:hover {
-  background: rgb(55, 209, 55);
+  background: var(--first-color-hover);
   transition: 0.2s;
 }
 .start-quizz button:active {
-  background: darkgreen;
+  background: var(--first-color-alt);
   box-shadow: inset 2px 2px 6px black;
 }
 .box-quizz {
@@ -172,7 +202,7 @@ button.all-theme:active {
   line-height: 35px;
 }
 .box-quizz .liste-quizz span {
-  color: red;
+  color: var(--first-color-hover);
   font-weight: 500;
 }
 .box-quizz .buttons-quizz {
@@ -200,20 +230,20 @@ button.all-theme:active {
 }
 .box-quizz .buttons-quizz .quit-quizz {
   background-color: white;
-  color: forestgreen;
-  border: 1px solid forestgreen;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
 }
 .box-quizz .buttons-quizz .quit-quizz:hover {
-  background-color: forestgreen;
+  background-color: var(--first-color);
   color: white;
 }
 .box-quizz .buttons-quizz .restart-quizz {
-  background-color: forestgreen;
+  background-color: var(--first-color);
   color: white;
-  border: 1px solid forestgreen;
+  border: 1px solid var(--first-color);
 }
 .box-quizz .buttons-quizz .restart-quizz:hover {
-  background-color: rgb(18, 118, 18);
+  background-color: var(--first-color-hover);
   color: rgba(255, 255, 255, 0.938);
 }
 .quizz {
@@ -275,7 +305,7 @@ button.all-theme:active {
   bottom: 0px;
   left: 0px;
   height: 3px;
-  background-color: forestgreen;
+  background-color: var(--first-color);
 }
 
 .quizz section {
@@ -354,15 +384,15 @@ footer .next_btn {
   border: none;
   outline: none;
   color: white;
-  background: forestgreen;
+  background: var(--first-color);
   border-radius: 5px;
-  border: 1px solid forestgreen;
+  border: 1px solid var(--first-color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 footer .next_btn:hover {
   color: white;
-  background-color: rgb(18, 118, 18);
+  background-color: var(--first-color-hover);
   color: rgba(255, 255, 255, 0.938);
 }
 
@@ -398,7 +428,7 @@ footer .next_btn:hover {
 
 .score_text span p {
   padding: 0 4px;
-  color: forestgreen;
+  color: var(--first-color-hover);
 }
 .result_quizz .buttons-quizz {
   display: flex;
@@ -423,20 +453,20 @@ footer .next_btn:hover {
 }
 .result_quizz .buttons-quizz .quit-quizz {
   background-color: white;
-  color: forestgreen;
-  border: 1px solid forestgreen;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
 }
 .result_quizz .buttons-quizz .quit-quizz:hover {
-  background-color: rgb(45, 179, 45);
+  background-color: var(--first-color-hover);
   color: white;
 }
 .result_quizz .buttons-quizz .restart-quizz {
-  background-color: forestgreen;
+  background-color: var(--first-color);
   color: white;
-  border: 1px solid forestgreen;
+  border: 1px solid var(--first-color);
 }
 .result_quizz .buttons-quizz .restart-quizz:hover {
-  background-color: rgb(45, 179, 45);
+  background-color: var(--first-color-hover);
   color: rgba(255, 255, 255, 0.938) result;
 }
 /* footer */
