@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  color-scheme: light dark;
+  
   /*========== Colors ==========*/
   /*
   color: bleu = 240
@@ -10,20 +12,20 @@
   */
   --hue: 131;
   --first-color: hsl(var(--hue), 50%, 35%);
-  --first-color-hover: hsl(var(--hue), 70%, 35%);
-  --first-color-text: hsl(var(--hue), 100%, 20%, 0.839);
+  --first-color-hover: light-dark( hsl(var(--hue), 70%, 35%), hsl(var(--hue), 100%, 35%));    
+  --first-color-text: light-dark( hsl(var(--hue), 100%, 20%, 0.839), hsl(var(--hue), 70%, 35%));
   --first-color-alt: hsl(var(--hue), 51%, 33%);
    --first-color-light: hsl(var(--hue), 48%, 94%);
   --title-color: hsl(230, 9%, 13%);
   --text-color: hsl(230, 9%, 13%);
   --text-color-light: hsl(234, 5%, 40%);
-  --white-color: hsl(0, 0%, 100%);
-  --body-color: hsl(0, 0%, 100%);
-  --container-color: hsl(0, 0%, 99%);
+  --white-color: light-dark( hsl(0, 0%, 12%),hsl(0, 0%, 99%));
+  --body-color: light-dark( hsl(0, 0%, 99%),hsl(0, 0%, 12%));
+  color: hsl(0, 0%, 12%);
+  --container-color: light-dark( hsl(0, 0%, 99%),hsl(0, 0%, 12%));
   --shadow-color: hsla(var(--hue), 90%, 30%, 0.1);
   --shadow-color-text: hsla(var(--hue), 90%, 30%, 0.1);
 }
-
 
 * {
   margin: 0;
@@ -34,10 +36,11 @@
   font-weight: 400;
 }
 html,
-body {
+body { 
   height: 100%;
 }
 .box {
+  background-color: var(--body-color);
   margin: auto;
   border: 3px solid black;
   margin: 10px;
@@ -45,6 +48,7 @@ body {
   height: 90vh;
 }
 .text {
+  color: var(--white-color);
   text-align: center;
   font-size: 3em;
   font-weight: bold;
@@ -75,6 +79,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 .titre-question {
+  color: var(--white-color);
   font-size: 1.5em;
   text-align: center;
   margin-top: 90px;
@@ -91,7 +96,7 @@ button.all-theme {
   padding: 0 5px;
   font-weight: 500;
   color: var(--first-color-text);
-  background-color: #fcfcfc;
+  background-color: var(--body-color);
   box-shadow: 1px 1px 5px black;
   cursor: pointer;
   border: none;
@@ -106,7 +111,7 @@ button.all-theme {
   padding: 0 5px;
   font-weight: 500;
   color: var(--first-color);
-  background-color: #fcfcfc;
+  background-color: var(--body-color);
   box-shadow: inset 1px 1px 5px black;
   cursor: default;
   border: none;
@@ -141,7 +146,7 @@ button.all-theme:active {
   border-radius: 10px;
   box-shadow: 2px 2px 6px black;
   transition: all 0.3s ease;
-  color: #fcfcfc;
+  color: var(--white-color);
 }
 .wrap-theme ul li:hover {
   background: var(--first-color-hover);
@@ -156,7 +161,7 @@ button.all-theme:active {
   justify-content: center;
 }
 .start-quizz button {
-  color: #fcfcfc;
+  color: var(--white-color);
   background: var(--first-color);
   border: none;
   font-size: 1.5em;
@@ -178,7 +183,7 @@ button.all-theme:active {
 .box-quizz {
   width: 100%;
   border-radius: 5px;
-  background: rgb(255, 255, 255);
+  background: var(--body-color);
   margin-top: 20px;
   opacity: 0;
   pointer-events: none;
@@ -224,22 +229,22 @@ button.all-theme:active {
   border-radius: 5px;
   border: 1px solid transparent;
   background: transparent;
-  color: white;
+  color: var(--white-color);
   cursor: pointer;
   transition: all 0.4s ease;
 }
 .box-quizz .buttons-quizz .quit-quizz {
-  background-color: white;
+  background-color: var(--white-color);
   color: var(--first-color);
   border: 1px solid var(--first-color);
 }
 .box-quizz .buttons-quizz .quit-quizz:hover {
   background-color: var(--first-color);
-  color: white;
+  color: var(--white-color);
 }
 .box-quizz .buttons-quizz .restart-quizz {
   background-color: var(--first-color);
-  color: white;
+  color: var(--white-color);
   border: 1px solid var(--first-color);
 }
 .box-quizz .buttons-quizz .restart-quizz:hover {
@@ -249,7 +254,7 @@ button.all-theme:active {
 .quizz {
   width: 100%;
   height: 100%;
-  background: white;
+  background: var(--body-color);
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
@@ -260,7 +265,7 @@ button.all-theme:active {
   z-index: 99;
   height: 70px;
   padding: 0 30px;
-  background: white;
+  background: var(--body-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -277,7 +282,7 @@ button.all-theme:active {
   justify-content: space-between;
   width: 145px;
   height: 45px;
-  background: rgb(241, 238, 238);
+  background: var(--body-color);
   border: 1px solid rgb(209, 209, 209);
   border-radius: 5px;
   padding: 0 8px;
@@ -293,7 +298,7 @@ button.all-theme:active {
   background: rgb(63, 61, 61);
   height: 30px;
   width: 45px;
-  color: white;
+  color: var(--white-color);
   text-align: center;
   line-height: 30px;
   border-radius: 5px;
@@ -310,7 +315,7 @@ button.all-theme:active {
 
 .quizz section {
   padding: 15px 30px 0px 30px;
-  background: white;
+  background: var(--body-color);
 }
 .quizz section .que_text {
   font-size: 18px;
@@ -323,7 +328,7 @@ button.all-theme:active {
 section .option_list .option {
   font-size: 17px;
   height: 50px;
-  background: rgb(233, 231, 231);
+  background: var(--body-color);
   border: 1px solid grey;
   border-radius: 5px;
   padding: 8px 15px;
@@ -383,7 +388,7 @@ footer .next_btn {
   font-weight: 500;
   border: none;
   outline: none;
-  color: white;
+  color: var(--white-color);
   background: var(--first-color);
   border-radius: 5px;
   border: 1px solid var(--first-color);
@@ -391,13 +396,13 @@ footer .next_btn {
   transition: all 0.3s ease;
 }
 footer .next_btn:hover {
-  color: white;
+  color: var(--white-color);
   background-color: var(--first-color-hover);
   color: rgba(255, 255, 255, 0.938);
 }
 
 .result_quizz {
-  background: white;
+  background: var(--body-color);
   width: 100%;
   height: 100%;
   padding: 25px 30px;
@@ -447,22 +452,22 @@ footer .next_btn:hover {
   border-radius: 5px;
   border: 1px solid transparent;
   background: transparent;
-  color: white;
+  color: var(--white-color);
   cursor: pointer;
   transition: all 0.4s ease;
 }
 .result_quizz .buttons-quizz .quit-quizz {
-  background-color: white;
+  background-color: var(--body-color);
   color: var(--first-color);
   border: 1px solid var(--first-color);
 }
 .result_quizz .buttons-quizz .quit-quizz:hover {
   background-color: var(--first-color-hover);
-  color: white;
+  color: var(--white-color);
 }
 .result_quizz .buttons-quizz .restart-quizz {
   background-color: var(--first-color);
-  color: white;
+  color: var(--white-color);
   border: 1px solid var(--first-color);
 }
 .result_quizz .buttons-quizz .restart-quizz:hover {
@@ -486,7 +491,7 @@ footer .next_btn:hover {
   padding: 0px 5px;
   display: flex;
   justify-content: space-between;
-  color: #000000ba;
+  color: var(--white-color);
   font-size: 12px;
   text-align: center;
 }

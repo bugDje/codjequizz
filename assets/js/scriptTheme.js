@@ -9,11 +9,9 @@ buttonAlltheme.addEventListener("click", () => {
   buttonAlltheme.classList.add("btnThemeOff");
 });
 
-
 /* Pour rajouter/modifier une thematique, suivre les 7 étape*/
 
 /* Pour rajouter/modifier un theme, suivre étape 2 seulements*/
-
 
 //fonction Random pour chaques thèmes
 
@@ -60,39 +58,47 @@ function Randgame(array) {
 }
 //étape1
 
-
 //pour chaque theme, rajouter une function random ci dessus ainsi que les variables ci-dessous
 
 //------------------------> étape2 <-------------------------
-let histoires = [worldWar2, marieCurie] ;
+let histoires = [worldWar2, marieCurie];
 let histRand = Randhist(histoires); //à rajouter pour chaque sous-catégorie
 
-let crimes = [crime1, crime2] ;
+let crimes = [crime1, crime2];
 let crimeRand = RandCrime(crimes);
 
-let  films = [harryPotter, film1] ;
+let films = [harryPotter, film1];
 let filmRand = RandCrime(films);
 
-let sports = [rugby, sport1] ;
+let sports = [rugby, sport1];
 let sportRand = RandCrime(sports);
 
-let sciences = [science1] ;
+let sciences = [science1, science2, science3];
 let scienceRand = RandCrime(sciences);
 
-let langues = [anglais1, anglais2] ;
+let langues = [anglais1, anglais2];
 let langueRand = RandCrime(langues);
 
-let series = [serie1, serie2] ;
+let series = [serie1, serie2];
 let serieRand = RandCrime(series);
 
-let games = [game1] ;
+let games = [game1, game2];
 let gameRand = RandCrime(games);
 //etape2
 
 //------------------------> étape3 <-------------------------
-let mesQuestions = [histRand, serieRand, filmRand, sportRand, scienceRand, langueRand, crimeRand, gameRand];
+let mesQuestions = [
+  histRand,
+  serieRand,
+  filmRand,
+  sportRand,
+  scienceRand,
+  langueRand,
+  crimeRand,
+  gameRand,
+];
 //étape3
- // pensez à mettre les themes (nom array) ici
+// pensez à mettre les themes (nom array) ici
 
 let quesRand = RandArray(mesQuestions);
 
@@ -100,7 +106,7 @@ let quesRand = RandArray(mesQuestions);
 let themeQuestion = document.querySelectorAll(".theme");
 
 //------------------------> étape4 <-------------------------
-function textTheme(){
+function textTheme() {
   if (quesRand === histRand) {
     for (let tout = 0; tout < themeQuestion.length; tout++) {
       themeQuestion[tout].innerText = ` "Histoire" `; //rajouter pour chaque nouveau theme
@@ -216,4 +222,3 @@ btnGame.addEventListener("click", () => {
 
 //------------------------> étape7 <-------------------------
 /* rajouter le theme sur la liste de index.html*/
-
