@@ -352,9 +352,8 @@ section .option_list .option {
   margin-bottom: 0;
 }
 .option_list .option .icon-quizz img { 
-  margin-bottom: 0;
-  width: 40%;
-  height: auto;
+  margin-bottom: 0;  
+  height: 35px;
 }
 .option_list .option.correct {
   background-color: lightgreen;
@@ -427,7 +426,7 @@ footer .next_btn:hover {
   font-weight: 500;
 }
 .result_quizz .icon-quizz {
-  width: 40%;
+  width: 10%;
   height: auto;
 }
 .result_quizz .score_text span {
