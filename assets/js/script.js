@@ -8,20 +8,61 @@ const timeCount = quiz_box.querySelector(".quizz-time .time_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
 const timeOff = quiz_box.querySelector("header .time_text");
 
-const colorPicker = document.getElementById('colorPicker');
+//------PSEUDO ET COULEUR----------
+const pseudoInput = document.getElementById("pseudoInput");
+const submitButton = document.getElementById("submitButton");
+const pseudoDisplay = document.getElementById("pseudoDisplay");
+const hueInput = document.getElementById("hueInput");
+const colorOptions = document.querySelectorAll(".color-option");
+const displayHome = document.querySelector(".accueil"); // Déplacer la déclaration ici
 
-//modifie la couleur du site (via tinicolor script)
-colorPicker.addEventListener('input',()=>{  
-  const selectColor = colorPicker.value;
+// Fonction pour appliquer les valeurs stockées depuis le localStorage
+function applyStoredValues() {
+  const storedPseudo = localStorage.getItem("pseudo");
+  const storedHue = localStorage.getItem("hue");
+  const isHomeHidden = localStorage.getItem("homeHidden") === "true"; // Vérifier si l'élément doit être caché
 
-  //récupère le code couleur hsl dans la bibliotheque de tinicolor
-  const tcColor = tinycolor(selectColor);
-  const hue = tcColor.toHsl().h; // permet d'obtenir la teinte
+  if (storedPseudo) {
+    pseudoDisplay.textContent = `Dernier pseudo utilisé : ${storedPseudo}`;
+    pseudoInput.value = storedPseudo; 
+  }
 
-  //met à jour la propriété css
-  document.documentElement.style.setProperty('--hue', hue);
+  if (storedHue) {
+    document.documentElement.style.setProperty("--hue", storedHue);
+    const hslColor = `hsl(${storedHue}, 100%, 50%)`;
+    document.documentElement.style.setProperty("--background-color", hslColor);
+  }
 
-})
+  // Appliquer l'état de displayHome
+  if (isHomeHidden) {
+    displayHome.style.display = "none";
+  }
+}
+// Appeler la fonction pour appliquer les valeurs stockées lors du chargement de la page
+applyStoredValues();
+
+submitButton.addEventListener("click", function () {
+  const pseudo = pseudoInput.value.trim();
+  clicRing();
+  if (pseudo) {
+    pseudoDisplay.textContent = `Dernier pseudo utilisé : ${pseudo}`;
+    localStorage.setItem("pseudo", pseudo); // Enregistrer le pseudo dans le localStorage
+    displayHome.style.display = "none"; // Cacher l'élément
+    localStorage.setItem("homeHidden", "true"); // Enregistrer l'état de l'élément
+  } else {
+    pseudoDisplay.textContent = "Veuillez entrer un pseudo valide.";
+  }
+});
+
+colorOptions.forEach((option) => {
+  option.addEventListener("click", function () {
+    const hue = this.getAttribute("data-hue");
+    document.documentElement.style.setProperty("--hue", hue); // Met à jour la variable --hue
+    const hslColor = `hsl(${hue}, 100%, 50%)`; // Utilisation de la valeur hue avec saturation et luminosité fixes
+    document.documentElement.style.setProperty("--background-color", hslColor); // Met à jour la couleur de fond
+    localStorage.setItem("hue", hue); // Enregistrer la couleur dans le localStorage
+  });
+});
 
 //bruitage
 const chronoRing = () => {
@@ -114,20 +155,28 @@ const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_quizz");
 const restart_quiz = result_box.querySelector(".buttons-quizz .restart-quizz");
 const quit_quiz = result_box.querySelector(".buttons-quizz .quit-quizz");
+const settingBtn = document.querySelector(".setting");
 
-restart_quiz.onclick = () => {  
-    // Mélangez les options de chaque question
-    quesRand.forEach(question => {
-        question.options = shuffleArray([...question.options]); //le spread operator [...] pour ne pas modifier l'original
-    });
-    // Fin du mélange    
+settingBtn.addEventListener("click",()=>{
+  displayHome.style.display = (displayHome.style.display === "flex")
+    ?"none"
+    :"flex"; 
+  
+});
+
+restart_quiz.onclick = () => {
+  // Mélangez les options de chaque question
+  quesRand.forEach((question) => {
+    question.options = shuffleArray([...question.options]); //le spread operator [...] pour ne pas modifier l'original
+  });
+  // Fin du mélange
   quiz_box.classList.add("activeQuiz");
   result_box.classList.remove("activeResult");
   timeValue = 15;
   que_count = 0;
   que_numb = 1;
   userScore = 0;
-  widthValue = 0;   
+  widthValue = 0;
   showQuestions(que_count);
   queCounter(que_numb);
   clearInterval(counter);
@@ -226,24 +275,25 @@ function showResultBox() {
   info_box.classList.remove("activeInfo");
   quiz_box.classList.remove("activeQuiz");
   result_box.classList.add("activeResult");
+  const pseudo = pseudoInput.value.trim();
   const scoreText = result_box.querySelector(".score_text");
   if (userScore == 5) {
     fortRing();
-    let scoreTag = `<span>Et WAaaOouuH!! tu as eu<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions ! INCROYABLE !!!!</span>`;
+    let scoreTag = `<span>Et WAaaOouuH ${pseudo}!! tu as eu<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions ! INCROYABLE !!!!</span>`;
     scoreText.innerHTML = scoreTag;
   } else if (userScore >= 3) {
     vaincRing();
-    let scoreTag = `<span>Et Bravo! tu as fait<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions.</span>`;
+    let scoreTag = `<span>Et Bravo ${pseudo}! tu as fait<p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions.</span>`;
     scoreText.innerHTML = scoreTag;
   } else if (userScore >= 1) {
     moyRing();
-    let scoreTag = `<span>Malheureusement, tu as seulement 
+    let scoreTag = `<span>Malheureusement ${pseudo}, tu as seulement 
             <p>${userScore}</p>bonnes réponses sur<p>${quesRand.length}</p>questions.
           </span>`;
     scoreText.innerHTML = scoreTag;
   } else {
     perdRing();
-    let scoreTag = `<span>Oh Non! par contre tu as<p>${userScore}</p>bonne réponse sur<p>${quesRand.length}</p>questions.</span>`;
+    let scoreTag = `<span>Oh Non ${pseudo}! Tu as<p>${userScore}</p>bonne réponse sur<p>${quesRand.length}</p>questions.</span>`;
     scoreText.innerHTML = scoreTag;
   }
 }
@@ -254,7 +304,7 @@ function queCounter(index) {
 }
 function startTimer(time) {
   counter = setInterval(timer, 1000);
-  function timer() {   
+  function timer() {
     timeCount.textContent = time;
     time--;
     chronoRing();
@@ -301,18 +351,16 @@ function RandArray(array) {
 // Fonction pour mélanger un tableau
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Échange
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Échange
   }
   return array;
 }
 // Fonction pour mélanger un tableau
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Échange
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Échange
   }
   return array;
 }
-
-

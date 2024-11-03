@@ -2,7 +2,7 @@
 
 :root {
   color-scheme: light dark;
-  
+
   /*========== Colors ==========*/
   /*
   color: bleu = 240
@@ -12,17 +12,23 @@
   */
   --hue: 131;
   --first-color: hsl(var(--hue), 50%, 35%);
-  --first-color-hover: light-dark( hsl(var(--hue), 70%, 35%), hsl(var(--hue), 100%, 35%));    
-  --first-color-text: light-dark( hsl(var(--hue), 100%, 20%, 0.839), hsl(var(--hue), 70%, 35%));
+  --first-color-hover: light-dark(
+    hsl(var(--hue), 70%, 35%),
+    hsl(var(--hue), 100%, 35%)
+  );
+  --first-color-text: light-dark(
+    hsl(var(--hue), 100%, 20%, 0.839),
+    hsl(var(--hue), 70%, 35%)
+  );
   --first-color-alt: hsl(var(--hue), 51%, 33%);
-   --first-color-light: hsl(var(--hue), 48%, 94%);
+  --first-color-light: hsl(var(--hue), 48%, 94%);
   --title-color: hsl(230, 9%, 13%);
   --text-color: hsl(230, 9%, 13%);
   --text-color-light: hsl(234, 5%, 40%);
-  --white-color-ld: light-dark( hsl(0, 0%, 12%),hsl(0, 0%, 99%));
+  --white-color-ld: light-dark(hsl(0, 0%, 12%), hsl(0, 0%, 99%));
   --white-color: hsl(0, 0%, 99%);
-  --body-color: light-dark( hsl(0, 0%, 99%),hsl(0, 0%, 12%));
-  --container-color: light-dark( hsl(0, 0%, 99%),hsl(0, 0%, 12%));
+  --body-color: light-dark(hsl(0, 0%, 99%), hsl(0, 0%, 12%));
+  --container-color: light-dark(hsl(0, 0%, 99%), hsl(0, 0%, 12%));
   --shadow-color: hsla(var(--hue), 90%, 30%, 0.1);
   --shadow-color-text: hsla(var(--hue), 90%, 30%, 0.1);
 }
@@ -36,13 +42,66 @@
   font-weight: 400;
 }
 html,
-body { 
+body {
   height: 100%;
   color: var(--white-color-ld);
   background-color: var(--body-color);
 }
-.cls-1{
-  stroke: aqua;
+.accueil {
+  display: flex;
+  z-index: 1;
+  color: var(--white-color-ld);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.accueil h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--first-color);
+}
+#pseudoInput {
+  padding: 10px;
+  border: 2px solid var(--first-color);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 40%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+#pseudoInput:focus { 
+  border-color: var(--first-color-hover);
+  outline: none;
+}
+
+#pseudoInput::placeholder {
+  color: #888;
+  font-style: italic;
+}
+#submitButton {
+  background: var(--first-color);
+  color: var(--white-color);
+  border: none;
+  font-size: 1.5em;
+  padding: 2px 6px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px black;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.wrap-color {
+  display: flex;
+  align-items: center;
+}
+.color-option {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #000;
 }
 .box {
   background-color: var(--body-color);
@@ -52,15 +111,21 @@ body {
   width: 90%;
   height: 90vh;
 }
+.setting {
+  display: flex;
+  justify-content: flex-end;
+  margin: 7px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--white-color-ld);
+}
+.setting:hover {
+  color: var(--first-color);
+}
 .text {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
-}
-#colorPicker{
-  inset: 0% 0% 0% 50%;
-  transform: translate(-50%, 50%);
-  position: relative;
 }
 .box,
 .quizz,
@@ -149,7 +214,7 @@ button.all-theme:active {
   padding: 2px 6px;
   border-radius: 10px;
   box-shadow: 2px 2px 6px black;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 .wrap-theme ul li:hover {
   background: var(--first-color-hover);
@@ -351,8 +416,8 @@ section .option_list .option {
 .option_list .option:last-child {
   margin-bottom: 0;
 }
-.option_list .option .icon-quizz img { 
-  margin-bottom: 0;  
+.option_list .option .icon-quizz img {
+  margin-bottom: 0;
   height: 35px;
 }
 .option_list .option.correct {
@@ -469,7 +534,7 @@ footer .next_btn:hover {
 }
 .result_quizz .buttons-quizz .quit-quizz:hover {
   background-color: var(--first-color-hover);
-  color: var(--white-color-ld);
+  color: var(--white-color);
 }
 .result_quizz .buttons-quizz .restart-quizz {
   background-color: var(--first-color);
@@ -554,7 +619,7 @@ footer .next_btn:hover {
     font-size: 16px;
   }
   .text {
-    margin-top: 30px
+    margin-top: 30px;
   }
   .dje-footer span {
     color: #fa1;
@@ -578,8 +643,8 @@ footer .next_btn:hover {
     color: lightgreen;
   }
   .box-quizz .liste-quizz {
-    line-height: 30px
-}
+    line-height: 30px;
+  }
 }
 @media (min-width: 961px) {
   .dje-footer span {

@@ -2,19 +2,67 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Quizz avec divers thèmes by coDje ">
+    <meta name="description" content="Quizz avec divers thèmes by coDje " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Quizz?</title>
     <link rel="icon" href="./image/quizz.ico" type="Icon Quizz" />
     <link href="./assets/style.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+    />
   </head>
   <body>
-    <div class="dje-wrap">
+    <div class="dje-wrap">      
+        <div class="accueil box">
+          <h2 class="h2-setting">Bienvenue sur CoDje Quizz</h2>
+
+          <label for="pseudoInput">Entrez votre pseudo :</label>
+          <input type="text" id="pseudoInput" placeholder="Votre pseudo ici" maxlength="20" required />
+
+          <div class="wrap-color">
+            <p>Choisissez une teinte : </p>
+            <div
+              class="color-option"
+              style="background-color: hsl(0, 50%, 35%)"
+              data-hue="0"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: hsl(60, 50%, 35%)"
+              data-hue="60"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: hsl(120, 50%, 35%)"
+              data-hue="120"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: hsl(180, 50%, 35%)"
+              data-hue="180"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: hsl(240, 50%, 35%)"
+              data-hue="240"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: hsl(300, 50%, 35%)"
+              data-hue="300"
+            ></div>
+          </div>
+
+          <button id="submitButton" class="push-start">Valider</button>
+
+          <div id="pseudoDisplay"></div>
+        </div>
+
       <div class="box">
+        <div class="setting"><i class="ri-settings-3-fill"></i></div>
         <h3 class="text">QuiZz coDje</h3>
-        <input type="color" id="colorPicker" value="#2d863d" aria-label="color">
         <div class="wrap-theme">
           <h4 class="titre-question">
             Thème du jour<cite><span class="theme"></span></cite>
@@ -88,7 +136,13 @@
           </section>
         </div>
         <div class="result_quizz">
-          <img src="image/medals.svg" alt="icon medaille" class="icon-quizz" height="auto" width="40%" />
+          <img
+            src="image/medals.svg"
+            alt="icon medaille"
+            class="icon-quizz"
+            height="auto"
+            width="40%"
+          />
           <div class="completed_text">Félicitation, tu as Fini le quiZz !</div>
           <div class="score_text"></div>
           <div class="buttons-quizz">
@@ -99,7 +153,8 @@
       </div>
     </div>
     <div class="dje-footer">
-      <p>&copy; coDje <span>•</span> 2024 - tous droits réservés</p><p>Version 1.42</p>
+      <p>&copy; coDje <span>•</span> 2024 - tous droits réservés</p>
+      <p>Version 1.5</p>
     </div>
     <!-- Fichier javaScript -->
     <script src="./assets/js/script.js"></script>
