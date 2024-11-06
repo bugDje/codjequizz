@@ -14,51 +14,57 @@
     />
   </head>
   <body>
-    <div class="dje-wrap">      
-        <div class="accueil box">
-          <h2 class="h2-setting">Bienvenue sur CoDje Quizz</h2>
+    <div class="dje-wrap">
+      <div class="accueil box">
+        <h2 class="h2-setting">Bienvenue sur CoDje Quizz</h2>
 
-          <label for="pseudoInput">Entrez votre pseudo :</label>
-          <input type="text" id="pseudoInput" placeholder="Votre pseudo ici" maxlength="20" required />
+        <label for="pseudoInput">Entrez votre pseudo :</label>
+        <input
+          type="text"
+          id="pseudoInput"
+          placeholder="Votre pseudo ici"
+          maxlength="20"
+          required
+        />
 
-          <div class="wrap-color">
-            <p>Choisissez une teinte : </p>
-            <div
-              class="color-option"
-              style="background-color: hsl(0, 50%, 35%)"
-              data-hue="0"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: hsl(60, 50%, 35%)"
-              data-hue="60"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: hsl(120, 50%, 35%)"
-              data-hue="120"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: hsl(180, 50%, 35%)"
-              data-hue="180"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: hsl(240, 50%, 35%)"
-              data-hue="240"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: hsl(300, 50%, 35%)"
-              data-hue="300"
-            ></div>
-          </div>
-
-          <button id="submitButton" class="push-start">Valider</button>
-
-          <div id="pseudoDisplay"></div>
+        <div class="wrap-color">
+          <p>Choisissez une teinte :</p>
+          <div
+            class="color-option"
+            style="background-color: hsl(0, 50%, 35%)"
+            data-hue="0"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: hsl(60, 50%, 35%)"
+            data-hue="60"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: hsl(120, 50%, 35%)"
+            data-hue="120"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: hsl(180, 50%, 35%)"
+            data-hue="180"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: hsl(240, 50%, 35%)"
+            data-hue="240"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: hsl(300, 50%, 35%)"
+            data-hue="300"
+          ></div>
         </div>
+
+        <button id="submitButton" class="push-start">Valider</button>
+
+        <div id="pseudoDisplay"></div>
+      </div>
 
       <div class="box">
         <div class="setting"><i class="ri-settings-3-fill"></i></div>
@@ -71,16 +77,28 @@
             <button>Commencer le QuiZz</button>
           </div>
           <button class="all-theme">Autres<br />Thèmes</button>
-          <ul>
-            <li class="t-histoire">Histoire</li>
-            <li class="t-serie">Serie Tv</li>
-            <li class="t-film">Film</li>
-            <li class="t-sport">Sport</li>
-            <li class="t-science">Science</li>
-            <li class="t-langue">Langue</li>
-            <li class="t-crime">Crime</li>
-            <li class="t-game">Jeux video</li>
-          </ul>
+          <select
+            id="thematique"
+            name="thematique"
+            class="s-thematique"
+            onchange="afficherThemes()"
+          >
+            <option value="" disabled selected>
+              Veuillez choisir une thématique
+            </option>
+            <option value="Histoire">Histoire</option>
+            <option value="Crime">Crime</option>
+            <option value="Film">Film</option>
+            <option value="Sport">Sport</option>
+            <option value="Science">Science</option>
+            <option value="Langue">Langue</option>
+            <option value="Serie">Serie</option>
+            <option value="Game">Jeux Video</option>
+          </select>
+
+          <select id="theme" name="theme" class="s-theme">
+            <option value=""></option>
+          </select>
         </div>
         <div class="box-quizz">
           <div class="titre-quizz">
@@ -112,7 +130,10 @@
         </div>
         <div class="quizz">
           <header>
-            <div class="quizz-title">Thème:<span class="theme"></span></div>
+            <div class="quizz-title">
+              <p class="thematique-title"></p>
+              <p class="theme-title"></p>
+            </div>
             <div class="quizz-time">
               <div class="time_text">Temps Restant</div>
               <div class="time_sec">15</div>
@@ -154,7 +175,7 @@
     </div>
     <div class="dje-footer">
       <p>&copy; coDje <span>•</span> 2024 - tous droits réservés</p>
-      <p>Version 1.5</p>
+      <p>Version 1.6</p>
     </div>
     <!-- Fichier javaScript -->
     <script src="./assets/js/script.js"></script>

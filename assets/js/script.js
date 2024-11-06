@@ -124,13 +124,13 @@ const restartRing = () => {
 //button menu
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
+  clearWrapTheme.style.display = "none"; 
   clicRing();
 };
 
 exit_btn.onclick = () => {
   info_box.classList.remove("activeInfo");
-  clearWrapTheme.style.display = "flex";
+  clearWrapTheme.style.display = "flex";   
   clicRing();
 };
 
@@ -356,11 +356,4 @@ function shuffleArray(array) {
   }
   return array;
 }
-// Fonction pour mélanger un tableau
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Échange
-  }
-  return array;
-}
+

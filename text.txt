@@ -1,3 +1,7 @@
-demander un pseudo
-proposer une couleur du site
 faire un tableau de score avec les 10 meilleurs score
+
+mettre à jour la liste deroulante 
+
+faire le script pour que ça lance le theme quand on clique dessus
+
+enlever les regles
