@@ -625,6 +625,9 @@ footer .next_btn:hover {
     font-size: 19px;
     padding-left: 5px;
   }
+  .quizz header { 
+    padding: 0px 5px;
+  }
   section .option_list .option {
     font-size: 16px;
     height: 40px;
@@ -667,7 +670,9 @@ footer .next_btn:hover {
   .dje-footer span {
     color: lightcoral;
   }
-}
+  .quizz header {
+    padding: 0px 20px;
+}}
 @media (min-width: 641px) {
   .box {
     width: 600px;

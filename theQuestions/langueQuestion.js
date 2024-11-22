@@ -76,3 +76,35 @@ let anglais1 = [
       options: shuffleArray(["stove", "dishes", "flat", "saucepan"]),
     },
   ];
+  let ivEnglish1 = [
+    {
+      numb: 1,
+      question: `Quel est le prétérit du verbe "to go" ?`,
+      answer: "went",
+      options: shuffleArray(["went", "goed", "gone", "go"]),
+    },
+    {
+      numb: 2,
+      question: `Quel est le participe passé du verbe "to see" ?`,
+      answer: "seen",
+      options: shuffleArray(["saw", "seed", "seen", "sawed"]),
+    },
+    {
+      numb: 3,
+      question: `Quel est le prétérit du verbe "to eat" ?`,
+      answer: "ate",
+      options: shuffleArray(["eat", "eated", "ate", "eaten"]),
+    },
+    {
+      numb: 4,
+      question: `Quel est le participe passé du verbe "to drink" ?`,
+      answer: "drunk",
+      options: shuffleArray(["drank", "drunk", "drinked", "drink"]),
+    },
+    {
+      numb: 5,
+      question: `Quel est le prétérit du verbe "to come" ?`,
+      answer: "came",
+      options: shuffleArray(["come", "comed", "came", "coming"]),
+    },
+  ];

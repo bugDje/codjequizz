@@ -36,6 +36,9 @@ function afficherThemes() {
   defaultOption.selected = true; // La rendre sélectionnée par défaut
   themeSelect.appendChild(defaultOption);
 
+
+  // ETAPE1
+
   // Définir les thèmes disponibles pour chaque thématique
   var themes = {
     Histoire: ["Seconde Guerre mondiale", "Marie Curie"],
@@ -43,7 +46,7 @@ function afficherThemes() {
     Film: ["Film 1", "Harry Potter"],
     Sport: ["Rugby", "Sport 1"],
     Science: ["Science 1", "Science 2", "Science 3"],
-    Langue: ["Anglais 1", "Anglais 2"],
+    Langue: ["Anglais 1", "Anglais 2","Anglais Vi1"],
     Serie: ["Serie 1", "Serie 2"],
     Games: ["Games 1", "Games 2"],
   };
@@ -73,6 +76,10 @@ themeSelect.addEventListener("change", () => {
   thematiqueTitle.innerHTML = `Catégorie: <em style="color:var(--first-color);">${selectedValue1}</em>`;
   themeTitle.innerHTML = `Thème: <em style="color:var(--first-color);">${selectedValue2}</em>`;
 
+
+  // ETAPE 2
+
+
   // Logique pour gérer les thèmes sélectionnés
   const themeMapping = {
     //"tableau var theme": tableau etape2,
@@ -94,6 +101,7 @@ themeSelect.addEventListener("change", () => {
 
     "Anglais 1":langues[0],
     "Anglais 2":langues[1],
+    "Anglais Vi1":langues[2],
 
     "Serie 1":series[0],
     "Serie 2":series[1],
@@ -115,23 +123,22 @@ themeSelect.addEventListener("change", () => {
 // Initialiser les thèmes lors du chargement de la page
 afficherThemes();
 
-/* Pour rajouter/modifier une thematique, suivre les 7 étape*/
-
-/* Pour rajouter/modifier un theme, suivre étape 2 seulements*/
 
 //fonction Random pour chaques thèmes
-//------------------------> étape1 <-------------------------
 function Rand(array) {
   let rand = Math.floor(Math.random() * array.length);
   return array[rand];
 }
+
+// ETAPE 3
+
 // tableaux pour chaque thème
 let histoires = [worldWar2, marieCurie];
 let crimes = [crime1, crime2];
 let films = [harryPotter, film1];
 let sports = [rugby, sport1];
 let sciences = [science1, science2, science3];
-let langues = [anglais1, anglais2];
+let langues = [anglais1, anglais2, ivEnglish1];
 let series = [serie1, serie2];
 let games = [game1, game2];
 
@@ -198,77 +205,10 @@ themeQuestion.forEach((element) => {
   thematiqueTitle.innerHTML = `Theme Du jour: <em style="color:var(--first-color);">${currentThemeText}</em>`;
 });
 
-// ----------Choix des thèmes avec bouton ---------------
+/* Pour rajouter/modifier une thematique, suivre les 7 étape*/
 
-//------------------------> étape5 <-------------------------
-let btnHistoire = document.querySelector(".t-histoire"); // à rajouter si nouveau thème
-let btnSerie = document.querySelector(".t-serie");
-let btnFilm = document.querySelector(".t-film");
-let btnSport = document.querySelector(".t-sport");
-let btnScience = document.querySelector(".t-science");
-let btnLangue = document.querySelector(".t-langue");
-let btnCrime = document.querySelector(".t-crime");
-let btnGame = document.querySelector(".t-game");
-//étape5
+/* Pour rajouter/modifier un theme, suivre 3 étapes  seulements*/
 
-//------------------------> étape6 <-------------------------
-btnHistoire.addEventListener("click", () => {
-  quesRand = mesQuestions[0];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnSerie.addEventListener("click", () => {
-  quesRand = mesQuestions[1];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnFilm.addEventListener("click", () => {
-  quesRand = mesQuestions[2];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnSport.addEventListener("click", () => {
-  quesRand = mesQuestions[3];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnScience.addEventListener("click", () => {
-  quesRand = mesQuestions[4];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnLangue.addEventListener("click", () => {
-  quesRand = mesQuestions[5];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnCrime.addEventListener("click", () => {
-  quesRand = mesQuestions[6];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-btnGame.addEventListener("click", () => {
-  quesRand = mesQuestions[7];
-  info_box.classList.add("activeInfo");
-  clearWrapTheme.style.display = "none";
-  clicRing();
-  textTheme();
-});
-//étape6
 
 //------------------------> étape7 <-------------------------
 /* rajouter le theme sur la liste de index.html*/
